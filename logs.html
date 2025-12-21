@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITAN // FULL_REPORT</title>
+    <style> 
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Rajdhani:wght@600;700&display=swap');
+
+        :root {
+            --neon: #00f2ff;
+            --alert: #ff003c;
+            --dark: #050505;
+            --text: #e0e0e0;
+            --panel: #0a0f14;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--text);
+            font-family: 'JetBrains Mono', monospace;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+           
+            background-image: 
+                linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            border-left: 1px solid var(--neon); /* Garis vertikal kiri ala terminal */
+            padding-left: 25px;
+            padding-right: 10px;
+            padding-bottom: 50px;
+        }
+      
+        h1 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 32px;
+            color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(0, 242, 255, 0.3);
+        }
+        
+        .meta { 
+            font-size: 12px; 
+            color: var(--neon); 
+            margin-bottom: 40px; 
+            display: block; 
+            border-bottom: 1px dashed #333;
+            padding-bottom: 10px;
+        }
+
+        
+        p { 
+            font-size: 14px; 
+            margin-bottom: 20px; 
+            text-align: justify; 
+            color: #ccc;
+        }
+
+        h3 {
+            color: var(--neon);
+            font-size: 18px;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #222;
+            display: inline-block;
+        }
+
+        strong { color: #fff; font-weight: bold; }
+
+        .evidence-box {
+            margin: 30px 0;
+            background: var(--panel);
+            border: 1px solid #333;
+            padding: 10px;
+            
+            
+            width: 100%; 
+            box-sizing: border-box; 
+            
+          
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            border-radius: 4px;
+
+          
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        img {
+            max-width: 100%; 
+            height: auto;
+            
+            
+            border: 1px solid #444; 
+            display: block;
+        }
+
+        .caption {
+            font-size: 11px;
+            color: #666;
+            text-align: center;
+            margin-top: 10px;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            
+            
+            border-top: 1px solid #222;
+            width: 100%;
+            padding-top: 5px;
+        }
+
+       
+        .btn-back {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 50px;
+            background: rgba(0, 242, 255, 0.05);
+            border: 1px solid var(--neon);
+            color: var(--neon);
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .btn-back:hover { 
+            background: var(--neon); 
+            color: #000; 
+            box-shadow: 0 0 15px var(--neon);
+        }
+        </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>RESEARCH LOGS</h1>
+        <span class="meta">DEV_ID: Titan_Chess | DATE: 20/12/2025</span>
+
+        <p>
+            Sejauh ini, saya sudah melakukan uji coba terhadap Engine Titan_Chess. Uji coba tersebut saya lakukan secara terus-menerus selama 14 hari non-stop (dalam artian saya bermain tanpa membatasi waktu bermain).
+        </p>
+
+        <div class="evidence-box">
+            <img src="img1.jpg" alt="Bukti Uji Coba 14 Hari">
+            <div class="caption">EVIDENCE #1: DURASI UJI COBA</div>
+        </div>
+
+        <p>
+            Perlu saya ingatkan bahwa saya memulai dari ELO 1.500 (menggunakan mode ELO 1.900), hingga kemudian mencapai ELO 1.900 (menggunakan mode ELO 2.200). Setelah menembus ELO 2.000 (menggunakan mode ELO 2.500), saat ini saya tertahan (stuck) di ELO 2.400, dengan ELO tertinggi berkisar di angka 2.450.
+        </p>
+
+        <div class="evidence-box">
+            <img src="img2.jpg" alt="Grafik ELO">
+            <div class="caption">EVIDENCE #2: PROGRESI RATING</div>
+        </div>
+
+        <p>
+            Secara garis besar, permainan saya menyentuh rata-rata akurasi 85%, dan perlu diketahui bahwa saya kerap mendapatkan akurasi 90%. Untuk informasi lebih lanjut, silakan cek akun Chess.com saya yang tertera pada gambar di atas.
+        </p>
+        
+        <p>
+            Bahkan ketika bermain melawan CM (Candidate Master) atau pemain bergelar lainnya, saya meraih kemenangan dengan akurasi 83%. Hal ini membuat penggunaan engine sulit terdeteksi. Tanpa melebih-lebihkan kekuatan engine ini, saya juga sering kalah oleh pemain bergelar atau pemain dengan ELO rating di bawah saya.
+        </p>
+
+        <div class="evidence-box">
+            <img src="img3.jpg" alt="Match vs Titled Player">
+            <div class="caption">EVIDENCE #3: VS TITLED PLAYER (83% ACCURACY)</div>
+        </div>
+
+        <h3>KENDALA DAN BATASAN</h3>
+        
+        <p>
+            Masalah utama pada engine Titan_Chess saat ini adalah sulitnya menyentuh ELO 2.700–2.800. Kemungkinan ELO tertinggi yang bisa dicapai adalah antara 2.500–2.600. Untuk mencapai ELO 2.800–3.000 hampir mustahil.
+        </p>
+        
+        <p>
+            Alasannya, ketika ELO Anda melonjak tinggi dalam waktu singkat, Chess.com akan langsung mengambil tindakan berupa analisis akun menggunakan teknologi <strong>Ken Regan</strong>. Pada tahap tertentu Anda mungkin lolos, namun jika sudah menyentuh 2.700–2.800, akan sulit untuk tetap aman karena probabilitas pemain non-bergelar mencapai rating tersebut sangatlah kecil.
+        </p>
+
+        <div class="evidence-box">
+            <img src="img4.jpg" alt="Limitasi Elo">
+            <div class="caption">EVIDENCE #4: BATAS AMAN RATING</div>
+        </div>
+
+        <h3>LOGIKA HUMAN-LIKE</h3>
+        
+        <p>
+            Titan_Chess mengelabui sistem Chess.com melalui beberapa hal. Pertama, adalah penggunaan engine berkarakter human-like. Dengan kata lain, langkah (move) yang dilakukan bukanlah "langkah alien" dengan kedalaman (depth) yang tidak masuk akal. Titan_Chess mengambil langkah dengan melihat posisi papan menggunakan logika: <strong>kuasai pusat dan kembangkan perwira</strong>. Ia bahkan bersedia menukar satu perwira dengan 3 pion jika mendapatkan posisi yang menguntungkan.
+        </p>
+
+        <div class="evidence-box">
+            <img src="img5.jpg" alt="Posisi Strategis">
+            <div class="caption">EVIDENCE #5: PENGUASAAN Posisi</div>
+        </div>
+
+        <p>
+            Pada mode ELO 1.500–2.200, terdapat beberapa blunder manusiawi. Semisal pada titik buta (blind spot), engine Titan_Chess sengaja membiarkan Menteri dimakan—kami melatih semua permainan di mode Blitz 1 menit. Oleh karena itu, ketika saya bermain melawan ELO 1.900, saya menggunakan mode ELO 2.200. Bahkan dalam beberapa kondisi, saya mengalami kekalahan yang cukup memalukan, seperti terkena checkmate dalam posisi pemula. Namun, itulah risiko dari engine human-like yang meniru perilaku manusia.
+        </p>
+
+        <h3>KARAKTERISTIK MODE ELO 2.500</h3>
+
+        <p>
+            Untuk mode ELO 2.500, kekuatannya sudah setara pemain bergelar. Namun, saya tegaskan kembali bahwa pada mode ini tetap bisa terjadi kesalahan kalkulasi. Semisal dalam 8 langkah ke depan, ia bisa salah taktik—bukan karena kesengajaan, melainkan karena lawan yang cerdas dalam menyusun strategi. Ia bahkan bisa melewatkan checkmate dalam lima langkah pada posisi sulit karena engine menganggap langkah tersebut tidak masuk akal atau sulit dilakukan.
+        </p>
+
+        <div class="evidence-box">
+            <img src="img6.jpg" alt="Mode 2500">
+            <div class="caption">EVIDENCE #6: MODE 2500 GAMEPLAY</div>
+        </div>
+
+        <p>
+            Hal inilah yang membuat Anda aman dari deteksi. Mode ELO 2.500 adalah favorit saya karena minim blunder perwira dan terasa tenang saat dimainkan. Hanya saja, jalur skakmatnya terkadang sensitif; ia bisa melewatkan checkmate dua langkah jika posisi tersebut mengharuskan langkah sanggahan tertentu.
+        </p>
+        
+        <p>
+            Dalam posisi lain, mode ini bisa mengambil hasil remis (draw) meskipun sedang unggul. Mengapa? Karena logika yang digunakan adalah: <em>"Bermain seperti GrandMaster dalam sebuah turnamen."</em> Artinya, meski unggul kualitas atau kuantitas, Titan_Chess mungkin memaksakan draw jika ada keraguan atau risiko serangan balik (counter-attack) yang tinggi. Saat waktu tersisa sedikit, ia akan otomatis mengulang langkah, meniru psikologi manusia yang panik.
+        </p>
+
+        <h3>MODE ELO 2.700: "PEMAIN BERANDALAN"</h3>
+        
+        <p>
+            Karena keterbatasan itulah, saya menambahkan mode ELO 2.700. Sebenarnya, mode ini tidak sepenuhnya setara 2.700 murni; saat uji coba melawan bot Hikaru, mode ini mengalami kekalahan yang cukup wajar. Saya menamakannya mode "Pemain Berandalan".
+        </p>
+        
+        <p>
+            Dalam satu permainan, ia bisa melakukan gerakan aneh yang awalnya saya kira brilian, namun ternyata adalah kesalahan. Ia pernah menukar Benteng dengan Kuda lawan yang berada di posisi strategis, namun kemudian berhasil membalikkan keadaan. Sayangnya, pada fase end game, mode 2.700 ini tidak sekuat mode 2.500. Saya menyarankan untuk mengombinasikan penggunaan mode 2.500 dan 2.700.
+        </p>
+
+        <div class="evidence-box">
+            <img src="img7.jpg" alt="Mode Berandalan">
+            <div class="caption">EVIDENCE #7: LANGKAH AGRESIF MODE 2700</div>
+        </div>
+
+        <p>
+            Jika Anda menyukai permainan agresif yang sering mengorbankan perwira seperti Mikhail Tal, gunakanlah mode 2.700. Namun waspadalah, mode ini cukup brutal dan langkahnya kadang merugikan. Jika lawan mampu mengantisipasi serangan tersebut, Anda bisa kalah cepat karena kalah jumlah perwira.
+        </p>
+
+        <h3>KESIMPULAN</h3>
+
+        <p>
+            Berbeda dengan mode 2.500 yang cenderung bermain santai, kompleks, dan mengutamakan pembukaan (opening) yang solid, mode 2.700 tidak terlalu memedulikan fase pembukaan. Begitu melihat kesempatan menyerang, ia akan langsung melakukannya.
+        </p>
+        
+        <p>
+            Berdasarkan hasil uji coba, Titan_Chess jelas berbeda dengan engine lain yang sekadar menggunakan Stockfish sebagai otaknya. Saya tidak menjamin engine ini 100% anti-banned, namun sejauh ini Titan_Chess terbukti mampu mengelabui deteksi Chess.com. Jika ke depannya ada akun yang terkena blokir, saya akan mencari metode lain yang lebih kuat.
+        </p>
+
+        <p>
+            Untuk saat ini, Titan_Chess sangat layak digunakan untuk mencapai rating setara pemain bergelar. Jika Anda menemukan bug, error, atau indikator panah yang tidak muncul/berkedip, harap segera melaporkannya agar kami perbaiki.
+        </p>
+        
+        <p>Terima kasih dan salam hangat, Chess Lover.</p>
+
+        <div class="evidence-box">
+            <img src="img8.jpg" alt="Titan Chess">
+            <div class="caption">EVIDENCE #8: SYSTEM ACTIVE</div>
+        </div>
+
+        <a href="index.html" class="btn-back"><< KEMBALI KE TERMINAL UTAMA</a>
+    </div>
+
+</body>
+</html>
