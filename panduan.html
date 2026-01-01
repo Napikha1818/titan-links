@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITAN // CLASSIFIED_LOG</title>
+    <title>TITAN // MASTER_PROTOCOL</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@700;900&display=swap');
 
         :root {
             --neon: #00f2ff;
             --dark: #050505;
-            --glass: rgba(0, 242, 255, 0.05);
             --border: rgba(0, 242, 255, 0.3);
-            --warn: #ffcc00;
             --danger: #ff003c;
+            --danger-bg: rgba(255, 0, 60, 0.08); /* Background merah transparan */
         }
 
         body {
@@ -34,13 +33,12 @@
             max-width: 800px;
             margin: 0 auto;
             border: 1px solid var(--border);
-            background: rgba(0,0,0,0.85);
+            background: rgba(5, 5, 5, 0.95);
             padding: 40px;
-            box-shadow: 0 0 30px rgba(0, 242, 255, 0.1);
-            position: relative;
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.05);
         }
 
-        /* HEADER STYLE */
+        /* HEADER UTAMA */
         h1 {
             font-family: 'Orbitron', sans-serif;
             color: #fff;
@@ -49,28 +47,60 @@
             padding-bottom: 15px;
             margin-bottom: 30px;
             font-size: 24px;
-            letter-spacing: 1px;
-            line-height: 1.4;
+            letter-spacing: 2px;
         }
         h1 span { color: var(--neon); }
 
+        /* HEADER SUB-BAB (Untuk Bagian Arsip) */
         h2 {
             font-family: 'Orbitron', sans-serif;
             color: var(--neon);
             font-size: 18px;
-            margin-top: 40px;
+            margin-top: 50px;
             margin-bottom: 15px;
             border-left: 4px solid var(--neon);
             padding-left: 15px;
+            text-transform: uppercase;
         }
 
-        /* TEXT CONTENT */
-        p { margin-bottom: 20px; text-align: justify; font-size: 14px; }
-        
-        strong { color: #fff; font-weight: bold; }
-        em { color: var(--warn); font-style: normal; }
+        /* KOTAK PERINGATAN (BAGIAN ATAS) */
+        .alert-box {
+            border: 1px solid var(--danger);
+            background-color: var(--danger-bg);
+            padding: 30px;
+            margin-bottom: 50px;
+            border-left: 5px solid var(--danger);
+            position: relative;
+        }
 
-        /* BUTTON */
+        .alert-header {
+            color: var(--danger);
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            display: block;
+            border-bottom: 1px dashed rgba(255, 0, 60, 0.3);
+            padding-bottom: 10px;
+        }
+
+        /* TEXT STYLING */
+        p { 
+            margin-bottom: 20px; 
+            text-align: justify; /* Rata kanan-kiri agar rapi */
+            font-size: 14px; 
+            color: #cccccc;
+        }
+
+        /* Khusus teks di dalam kotak merah */
+        .alert-box p {
+            color: #fff;
+            text-align: left; /* Rata kiri untuk teks penting agar mudah dibaca */
+        }
+
+        /* TOMBOL KEMBALI */
         .btn-back {
             display: block;
             width: 100%;
@@ -80,31 +110,66 @@
             color: #000;
             text-decoration: none;
             font-weight: 900;
-            margin-top: 50px;
+            margin-top: 60px;
             text-transform: uppercase;
             font-family: 'Orbitron', sans-serif;
             letter-spacing: 2px;
-            transition: 0.3s;
+            transition: 0.2s;
             clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
         }
         .btn-back:hover {
             background: #fff;
-            box-shadow: 0 0 30px var(--neon);
+            box-shadow: 0 0 20px var(--neon);
             transform: translateY(-2px);
         }
 
+        /* GARIS PEMISAH */
+        hr {
+            border: 0;
+            height: 1px;
+            background: #333;
+            margin: 50px 0;
+        }
+
+        /* BOLD TEXT & EMPHASIS */
+        strong { color: #fff; font-weight: bold; }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .container { padding: 20px; }
+            h1 { font-size: 18px; }
+            p { text-align: left; } /* Di HP rata kiri lebih aman */
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Panduan Riset dan Penggunaan Titan_Chess: <span>Menghindari Deteksi Sistem Keamanan Chess.com</span></h1>
-        
-        <p>Kami telah melakukan riset mendalam mengenai strategi agar terhindar dari sanksi blokir (banned) di Chess.com. Meskipun engine Titan_Chess memiliki klaim sebagai engine yang human-like (menyerupai pola pikir manusia)—dan klaim ini valid—hal tersebut tidak secara otomatis menjamin akun Anda aman dari deteksi.</p>
+        <h1>PANDUAN RISET & PROTOKOL: <span>TITAN_CHESS</span></h1>
 
-        <h2>Pengalaman Riset dan Kegagalan Awal</h2>
-        <p>Sebagai gambaran, pada tahap pengujian awal, saya membuat akun baru dengan rating Elo 900. Hanya dalam waktu satu hari, akun tersebut terkena banned. Awalnya, saya menduga hal ini disebabkan oleh kode yang saya suntikkan (inject) ke dalam situs web tersebut. Saya kemudian mencoba pendekatan teknis yang berbeda agar kode tersebut tidak terdeteksi, namun akun kedua saya tetap diblokir dalam waktu dua hari.</p>
-        <p>Setelah kegagalan tersebut, saya memutuskan untuk berhenti melakukan intervensi teknis atau injection pada situs Chess.com maupun Lichess.org dan beralih ke pendekatan perilaku. Namun, percobaan pada akun ketiga pun masih berakhir dengan kegagalan yang sama.</p>
+        <div class="alert-box">
+            <span class="alert-header">⚠️ LAPORAN INSIDEN & KEBIJAKAN PENGGUNAAN</span>
+            
+            <p>Salah satu pengguna Titan_Chess melapor bahwa akunnya terkena banned dalam kurun waktu tiga jam. Ternyata, dia memainkan mode Bullet (1 menit). Oleh karena itu, saya arahkan dia agar memainkan Blitz 3 menit atau Rapid terlebih dahulu. Hal itu disebabkan oleh langkahnya yang demikian cepat.</p>
+
+            <p>Kami sengaja tidak memasang delay panah agar pelanggan merasa tenang dan tidak perlu menunggu. Akan tetapi, bukan berarti keuntungan tersebut digunakan untuk melangkah dengan pola dan detik yang sama terus-menerus.</p>
+
+            <p>Chess.com sendiri melakukan banned otomatis dengan melihat langkah (move) seorang pemain. Andaikata move tersebut konsisten dalam detik yang tak jauh berbeda, maka banned otomatis dari server langsung dijalankan.</p>
+
+            <p>Untuk Anda—yang barangkali tertarik dengan fitur Titan_Chess—akan saya jelaskan bahwa engine ini bukanlah "Super Power". Kami malah sebaliknya, mengatakan bahwa engine ini meniru langkah manusia—kami melatihnya dari jutaan permainan di Lichess.org. Tidak seperti Stockfish yang "super dewa" dan mustahil dikalahkan, Titan_Chess jauh lebih mudah untuk ditaklukkan oleh pemain bergelar.</p>
+
+            <p>Satu hal yang penting: Andaikata Anda berlangganan Titan_Chess sekadar untuk menaikkan Elo dengan cepat, maka pilihan Anda salah. Sebab, kami pribadi menganjurkan cara yang demikian santai. Semisal, buatlah akun baru dengan bermain di mode Elo 1.500–1.900. Mainlah berkisar puluhan game; jangan pedulikan menang atau kalah, sebab untuk akun yang pertama kali dibuat, yang akan kita cetak terlebih dahulu adalah statistik. Kemudian, jika sudah beberapa hari, lakukanlah peningkatan dengan menggantinya ke mode Elo 2.200. Mainlah hingga ratusan game, hingga menyentuh Elo 2.000-an.</p>
+
+            <p>Seperti yang saya lakukan dan sudah saya terapkan, akun saya bertahan demikian lama. Bahkan, beberapa orang yang memberikan laporan (report) tak kunjung membuat akun saya terkena banned—setidaknya untuk saat ini.</p>
+
+            <p>Jika yang Anda inginkan adalah mencapai Elo tinggi dalam satu hari, agaknya Titan_Chess tidak cocok untuk Anda. Namun, andaikata Anda berlangganan Titan_Chess untuk satu bulan, mustahil dalam kurun waktu tersebut Anda tidak menyentuh Elo 2.400. Bahkan, saya hanya memerlukan waktu satu minggu. Namun, yang paling penting adalah seberapa lama akun kalian bertahan, bukan? Itu adalah poin utama yang ingin saya sampaikan.</p>
+        </div>
+
+        <hr>
+
+        <h2>Arsip Riset: Kegagalan Awal</h2>
+        <p>Sebagai gambaran sejarah pengembangan, pada tahap pengujian awal, saya membuat akun baru dengan rating Elo 900. Hanya dalam waktu satu hari, akun tersebut terkena banned. Awalnya, saya menduga hal ini disebabkan oleh kode yang saya suntikkan (inject) ke dalam situs web tersebut. Saya kemudian mencoba pendekatan teknis yang berbeda agar kode tersebut tidak terdeteksi, namun akun kedua saya tetap diblokir dalam waktu dua hari.</p>
+        <p>Setelah kegagalan tersebut, saya memutuskan untuk berhenti melakukan intervensi teknis atau injection pada situs Chess.com maupun Lichess.org dan beralih ke pendekatan perilaku serta penggunaan VPS eksternal. Namun, percobaan pada akun ketiga pun masih berakhir dengan kegagalan yang sama.</p>
 
         <h2>Penemuan Pola dan Strategi Elo</h2>
         <p>Setelah melalui berbagai eksperimen, saya mencoba metode baru. Saya membuat akun dengan nama Titan_Chess dan memilih kategori "Menengah" saat pendaftaran, sehingga akun dimulai dari rating Elo 1.500.</p>
@@ -121,22 +186,10 @@
         <p>Sebelum menciptakan Titan_Chess, saya menggunakan sistem Stockfish dengan pengaturan depth yang direndahkan. Saya sempat mencapai Elo 2.800 dalam lima hari, namun langkah-langkah yang dihasilkan sangat "asing" (seperti alien) bagi manusia. Saya bahkan mengalahkan seorang Grandmaster (GM) dengan akurasi 85%, namun akun-akun tersebut jarang bertahan lebih dari satu minggu karena deteksinya sangat mudah.</p>
         <p>Sebaliknya, Titan_Chess telah berhasil bertahan selama 15 hari hingga saat ini. Ini adalah pencapaian yang memuaskan, meskipun saya tetap tidak menjamin keamanan mutlak di masa depan. Risiko pemblokiran akan selalu ada, terutama jika laporan dari pemain lain menumpuk atau jika pihak Chess.com melakukan investigasi mendalam yang sangat spesifik.</p>
 
-        <h2>Aturan Penggunaan yang Aman</h2>
-        <p>Untuk menjaga keamanan akun, saya menyarankan Anda untuk menyesuaikan kekuatan engine dengan rating akun Anda saat ini.</p>
-        <p>Jika Elo Anda 1.200, gunakan mode 1.500.</p>
-        <p>Jika Anda mulai sering kalah saat mencapai 1.400, bersabarlah dan terus bermain di level tersebut.</p>
-        <p>Jika rasio kekalahan mulai tidak wajar, barulah naikkan ke mode 1.900.</p>
-        <p style="color: #ffcc00; font-weight: bold;">Peringatan: Menaikkan Elo secara drastis (misalnya dari 1.500 ke 2.000 dalam satu hari) adalah pemicu utama banned otomatis.</p>
-        <p>Chess.com memiliki sistem identifikasi yang sangat ketat. Tidak ada fitur "anti-banned" yang bisa menyelamatkan Anda jika Anda bermain terlalu agresif atau tidak sesuai dengan profil statistik level tersebut. Cara terbaik untuk mengelabui sistem statistik mereka adalah dengan menggunakan logika statistik yang serupa secara konsisten.</p>
-        <p>Mungkin Anda berpikir untuk menggunakan Stockfish versi gratis. Namun ingat, Stockfish bekerja dengan kalkulasi brute-force yang menghitung miliaran posisi dalam puluhan langkah ke depan. Pola pikir matematika seperti ini sangat mudah dideteksi. Sebaliknya, Titan_Chess dilatih menggunakan jutaan data permainan manusia dari Lichess.org untuk menghasilkan langkah yang benar-benar alami.</p>
-
         <h2>Tips Tambahan</h2>
         <p>Sebagai saran terakhir dalam bermain Blitz 3 menit:</p>
         <p><strong>Opening:</strong> Anda boleh melangkah dengan cepat pada fase pembukaan.</p>
         <p><strong>Middle Game:</strong> Berpura-puralah berpikir. Jangan memindahkan bidak secara instan. Konsistensi waktu langkah yang terlalu cepat dalam posisi sulit akan memicu alarm sistem sebagai perilaku "Bot".</p>
-
-        <h2>Kesimpulan</h2>
-        <p>Kami menjamin bahwa secara teknis Titan_Chess sangat aman. Keamanan akun tersebut kini bergantung sepenuhnya pada cara Anda mengoperasikannya. Titan_Chess sudah berperilaku seperti manusia, maka Anda pun wajib menggunakannya layaknya seorang manusia. Panduan ini dibuat agar Anda tidak kecewa di kemudian hari akibat penggunaan yang terlalu berlebihan.</p>
 
         <a href="index.html" class="btn-back"><< KEMBALI KE MENU UTAMA</a>
     </div>

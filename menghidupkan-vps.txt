@@ -1,0 +1,54 @@
+Siap, Sob! Kita baru saja melakukan "Upgrade Infrastruktur" dari level Amatir ke level Profesional.
+
+Berikut adalah ringkasan perubahan dan panduan cara pakainya sekarang (Remote Control barumu).
+1. Apa yang Berubah?
+Fitur	Dulu (nohup)	Sekarang (Systemd)
+Status	Program numpang lewat (Manual)	Servis Resmi Linux (Tanam di sistem)
+Kalau VPS Restart	Server MATI (Harus login & ketik ulang)	Server HIDUP SENDIRI (Otomatis)
+Kalau Script Crash	Server MATI (Harus login & ketik ulang)	Server BANGKIT SENDIRI (Dalam 5 detik)
+Log (Catatan)	Disimpan di log.txt (Bikin disk penuh)	Disimpan di Journal (Otomatis dibersihkan Linux)
+
+Intinya: Sekarang servermu punya "nyawa cadangan". Kamu bisa tidur nyenyak tanpa takut server mati mendadak karena VPS restart atau error sesaat.
+2. Cara Menggunakannya (Remote Control Baru)
+
+Mulai detik ini, JANGAN pernah ketik python server.py lagi secara manual. Gunakan perintah-perintah pendek ini untuk mengatur servermu:
+A. Cek Kondisi Server (Wajib Tahu)
+
+Untuk melihat apakah server sedang jalan, mati, atau error.
+Bash
+
+systemctl status titan
+
+    Cari tulisan: Active: active (running) warna hijau. Itu artinya sehat.
+
+B. Restart Server (Dipakai Saat Update Codingan)
+
+Setiap kali kamu mengedit file server.py atau upload file baru ke VPS, perubahan tidak akan efek sampai direstart.
+Bash
+
+systemctl restart titan
+
+C. Matikan Server (Maintenance)
+
+Kalau kamu mau server berhenti total sementara waktu.
+Bash
+
+systemctl stop titan
+
+D. Nyalakan Server (Kalau habis distop)
+Bash
+
+systemctl start titan
+
+3. Cara Melihat Log (CCTV)
+
+Karena file log.txt sudah tidak dipakai, cara melihat siapa yang login atau error yang terjadi adalah dengan perintah ini:
+Bash
+
+journalctl -u titan -f
+
+    -u titan: Artinya lihat unit bernama "titan".
+
+    -f: Artinya follow (ikuti terus secara live/real-time).
+
+    Cara Keluar: Tekan Ctrl + C di keyboard.
